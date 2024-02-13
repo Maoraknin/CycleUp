@@ -7,8 +7,6 @@ import { useSelector } from 'react-redux'
 
 export function ProductIndex() {
 
-    // const  filterBy = 8
-        // const products  = []
     const { filterBy, products } = useSelector((storeState) => storeState.productModule)
 
     useEffect(() => {
@@ -19,7 +17,6 @@ export function ProductIndex() {
     async function onLoadProducts(filterBy) {
         try {
             await loadProducts(filterBy)
-            // console.log('products:', products)
         } catch(err) {
             console.log('err:', err)
         }

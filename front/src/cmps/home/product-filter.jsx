@@ -9,6 +9,8 @@ export function ProductFilter() {
     const onSetFilter = useRef(utilService.debounce(setFilter))
     const elInputRef = useRef(null)
 
+    const garbageTypes = productService.getGarbageTypes()
+
     useEffect(() => {
         elInputRef.current.focus()
     }, [])
@@ -25,13 +27,29 @@ export function ProductFilter() {
 
     return <form className="product-filter">
             <input type="text"
-                id="content"
-                name="content"
+                name="name"
                 placeholder="Filter"
-                value={filterBy.content}
+                value={filterBy.name}
                 onChange={handleChange}
                 ref={elInputRef}
             />
+
+            <select
+                 onChange={handleChange}
+                 value={filterBy.garbageType}
+                 name='garbageType'
+            >
+                <option value="" disabled>Select an option</option>
+                {Object.keys(garbageTypes).map((garbageType) => (
+                  <option
+                    key={garbageType}
+                    value={garbageType}
+                    style={{ fontSize: '13px', width: '90%' }}
+                  >
+                    {garbageType + ' - ' + garbageTypes[garbageType]}
+                  </option>
+                ))}
+            </select>
     </form>
 
 }

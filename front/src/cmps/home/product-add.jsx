@@ -16,6 +16,7 @@ export function ProductAdd() {
 
     function handleChange({ target }) {
         let { value, name: field } = target
+        console.log(field);
         setProduct((prevState) => {
             return { ...prevState, [field]: value }
         })
@@ -47,8 +48,8 @@ export function ProductAdd() {
 
                 <select
                      onChange={handleChange}
-                     style={{ fontSize: '13px', width: '100px', height: '25px' }}
                      value={product.garbageType}
+                     name='garbageType'
                 >
                     <option value="" disabled>Select an option</option>
                     {Object.keys(garbageTypes).map((garbageType) => (

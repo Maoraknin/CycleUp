@@ -15,6 +15,11 @@ export const productService = {
 }
 
 function query(filterBy = getDefaultFilter()) {
+    return storageService.query(BASE_URL, filterBy)
+}
+
+
+function get(filterBy = getDefaultFilter()) {
     const queryParams = `?name=${filterBy.name}`
     return storageService.get(BASE_URL + queryParams)
 }
@@ -52,8 +57,8 @@ function getEmptyProduct() {
     return {
             name: "Coke",
             company: "CokaCola",
-            image: "https://example.com/recyclable_product1.jpg",
-            garbage_type: "orange"
+            image: "https://w7.pngwing.com/pngs/523/573/png-transparent-fizzy-drinks-coca-cola-diet-coke-beverage-can-coca-cola-food-tea-cola-thumbnail.png",
+            garbageType: "orange"
     }
 }
 

@@ -6,8 +6,18 @@ export const storageService = {
     remove,
 }
 
-function query(entityType, delay = 500) {
-    var entities = JSON.parse(localStorage.getItem(entityType)) || []
+function query(entityType, filterBy, delay = 500) {
+    let entities = JSON.parse(localStorage.getItem(entityType)) || []
+    if(filterBy.name && entities.length){
+       entities = entities.filter(entity => {
+           return entity.name.toLowerCase().includes(filterBy.name.toLowerCase())
+        })
+    }
+    if(filterBy.garbageType && entities.length){
+       entities = entities.filter(entity => {
+           return entity.garbageType === filterBy.garbageType
+        })
+    }
     return new Promise(resolve => setTimeout(() => resolve(entities), delay))
 }
 
