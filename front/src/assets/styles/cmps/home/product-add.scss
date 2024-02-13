@@ -1,0 +1,29 @@
+.product-add{
+    background-color: $s-clr1;
+    padding: 20px 0;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .add-input-container{
+        display: flex;
+        justify-content: center;
+
+        input{
+            width: 280px;
+        }
+    }
+
+    .add-btn{
+        align-self: flex-end;
+        margin: 10px 20px 0 0;
+        padding: 10px 20px;
+        background-color: #0081C9;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+}
