@@ -15,8 +15,8 @@ export function AppHeader() {
         <header className="app-header full main-layout">
             <div className='header-container'>
                 <nav>
-                    <NavLink to="/">Felix</NavLink>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/">CycleUp</NavLink>
+                    {/* <NavLink to="/">Home</NavLink> */}
                 </nav>
 
                 {/* <span onClick={() => setIsClicked(!isClicked)} className="material-symbols-outlined menu-btn">menu</span>

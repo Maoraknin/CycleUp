@@ -9,12 +9,13 @@ const BASE_URL = 'product'
 export const productService = {
     query,
     save,
+    getGarbageTypes,
     getDefaultFilter,
     getEmptyProduct
 }
 
 function query(filterBy = getDefaultFilter()) {
-    const queryParams = `?content=${filterBy.content}`
+    const queryParams = `?name=${filterBy.name}`
     return storageService.get(BASE_URL + queryParams)
 }
 
@@ -26,15 +27,33 @@ function save(product) {
     }
 }
 
+
+function getGarbageTypes() {
+    return {
+       green: 'mixed', 
+       blue: 'paper', 
+       orange: 'packages & plastic',
+       brown: 'organics',
+       purple: 'glass',
+       gray: 'metal',
+
+    }
+}
+
 function getDefaultFilter() {
-    return { content: '' }
+    return { 
+        name: '',
+        garbageType: '',
+     }
 }
 
 function getEmptyProduct() {
+
     return {
-        mail: '',
-        imgUrl: 'https://res.cloudinary.com/dimirmc9j/image/upload/v1674060775/container-guide_wc4cyf.png',
-        txt: '',
+            name: "Coke",
+            company: "CokaCola",
+            image: "https://example.com/recyclable_product1.jpg",
+            garbage_type: "orange"
     }
 }
 

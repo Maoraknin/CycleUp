@@ -1,9 +1,11 @@
+
 import { useState } from "react"
 import { saveProduct } from "../../store/product.action"
 import { productService } from "../../services/product.service"
 
 export function ProductAdd() {
 
+    const garbageTypes = productService.getGarbageTypes()
     const [product, setProduct] = useState(productService.getEmptyProduct())
 
     function onAddProduct(ev) {
@@ -26,22 +28,45 @@ export function ProductAdd() {
         <section className='product-add'>
             <form onSubmit={onAddProduct} className='add-product-form'>
                 <div className='add-input-container'>
-                    <input type='email'
-                        name='mail'
-                        id='mail'
-                        placeholder='Enter email...'
-                        value={product.mail}
+                    <input type='text'
+                        name='name'
+                        placeholder='Enter product name...'
+                        value={product.name}
                         onChange={handleChange}
                     />
                 </div>
+                
                 <div className='add-input-container'>
-                    <textarea
-                        name='txt'
-                        id='product'
-                        rows='4'
-                        cols='35'
-                        placeholder='Enter product...'
-                        value={product.txt}
+                    <input type='text'
+                        name='company'
+                        placeholder='Enter product company...'
+                        value={product.company}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <select
+                     onChange={handleChange}
+                     style={{ fontSize: '13px', width: '100px', height: '25px' }}
+                     value={product.garbageType}
+                >
+                    <option value="" disabled>Select an option</option>
+                    {Object.keys(garbageTypes).map((garbageType) => (
+                      <option
+                        key={garbageType}
+                        value={garbageType}
+                        style={{ fontSize: '13px', width: '90%' }}
+                      >
+                        {garbageType + ' - ' + garbageTypes[garbageType]}
+                      </option>
+                    ))}
+                </select>
+                
+                <div className='add-input-container'>
+                    <input type='url'
+                        name='image'
+                        placeholder='Enter product image url...'
+                        value={product.image}
                         onChange={handleChange}
                     />
                 </div>

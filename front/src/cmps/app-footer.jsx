@@ -14,7 +14,7 @@ export function AppFooter() {
             <div className='footer-container'>
                 <div className='info-container'>
                     <nav>
-                        <NavLink to="/">Felix</NavLink>
+                        <NavLink to="/">CycleUp</NavLink>
                     </nav>
 
                     <div className='location-container'>
@@ -28,7 +28,7 @@ export function AppFooter() {
                         <img src={facebook} alt="" />
                         <img src={pinterest} alt="" /> */}
                     </div>
-                    <p>Copyright 2020. All Rights Reserved</p>
+                    <p>Copyright 2024. All Rights Reserved</p>
 
                 </div>
             </div>
