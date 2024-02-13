@@ -1,0 +1,153 @@
+@mixin for-mobile-layout {
+    @media (max-width: $break-narrow) {
+      @content;
+    }
+  }
+  
+  @mixin for-narrow-layout {
+    @media (min-width: $break-narrow) {
+      @content;
+    }
+  }
+  
+  @mixin for-normal-layout {
+    @media (min-width: $break-normal) {
+      @content;
+    }
+  }
+  
+  @mixin for-wide-layout {
+    @media (min-width: $break-wide) {
+      @content;
+    }
+  }
+  
+  @mixin layoutGTC($max) {
+    grid-template-columns:
+      minmax($layoutPadding, 1fr) minmax(auto, $max) minmax($layoutPadding, 1fr);
+  }
+
+
+
+/* Media  Mixins */
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: calc(($height / $width) * 100%);
+    }
+
+    >* {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    >img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
+    @media not all and (pointer: coarse) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin input($type: regular, $padding: em(12px) em(44px), $width: 190px, $borderClr: $clr1) {
+    width: $width;
+    padding: $padding;
+    border: 1px solid $borderClr;
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    @if $type ==regular {
+        border-radius: 0.25em;
+
+    }
+
+    @else if $type ==round {
+        border-radius: 1em;
+
+    }
+
+}
+
+
+
+@mixin btn($type: primary, $state: light) {
+    font-family: livvic-semi-bold;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 2rem;
+    font-size: rem(18px);
+    border-radius: 2rem;
+    cursor: pointer;
+
+    @if $type ==primary {
+        background-color: inherit;
+
+        @if $state == light {
+            border: $p-clr3 1px solid;
+            color: $p-clr3;
+            
+            &:hover {
+                background-color: $p-clr3;
+                color: $s-clr4;
+            }
+            
+            &:disabled {
+                border: $p-clr1 1px solid;
+                color: $p-clr1;
+            }
+
+        }
+
+        @if $state == dark {
+            border: $s-clr4 1px solid;
+            color: $s-clr4;
+            
+            &:hover {
+                background-color: $s-clr4;
+                color: $p-clr3;
+            }
+            
+            &:disabled {
+                opacity: 0.5;
+            }
+
+        }
+    }
+
+    @if $type ==secondary {
+        @if $state == light {
+            border: none;
+            background-color: $p-clr3;
+            color: $s-clr4;
+            
+            &:hover {
+                background-color: $s-clr1;
+            }
+            
+            &:disabled {
+                background-color: $p-clr1;
+            }
+        }
+    }
+
+
+    transition: background-color 0.2s;
+
+}

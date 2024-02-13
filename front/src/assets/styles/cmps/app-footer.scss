@@ -1,0 +1,45 @@
+.footer{
+    background-color: $s-clr5;
+    color: $p-clr3;
+    padding: 30px 0;
+
+    .footer-container{
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .info-container{
+        display: flex;
+        gap: 120px;
+
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+
+        .nav-container{
+            display: flex;
+            gap: 40px;
+        }
+    }
+    p{
+        margin: 0;
+        font-family: livvic-medium;
+        color: #979797;
+    }
+
+    .web-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        .web-img-container{
+            display: flex;
+            gap: 16px;
+        }
+        img{
+            width: 24px;
+        }
+    }
+}
