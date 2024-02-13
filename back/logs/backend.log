@@ -6244,18 +6244,18 @@
 5.2.2023, 15:02:31 - INFO - Server is running on port: 3030 
 5.2.2023, 15:05:13 - INFO - Server is running on port: 3030 
 5.2.2023, 15:06:03 - INFO - Server is running on port: 3030 
-5.2.2023, 15:06:13 - ERROR - cannot insert comment | Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters 
-5.2.2023, 15:06:13 - ERROR - Failed to add comment | Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters 
+5.2.2023, 15:06:13 - ERROR - cannot insert product | Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters 
+5.2.2023, 15:06:13 - ERROR - Failed to add product | Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters 
 5.2.2023, 15:07:39 - INFO - Server is running on port: 3030 
 5.2.2023, 15:40:07 - INFO - Server is running on port: 3030 
 5.2.2023, 15:42:26 - INFO - Server is running on port: 3030 
 5.2.2023, 15:42:49 - INFO - Server is running on port: 3030 
 5.2.2023, 15:43:08 - INFO - Server is running on port: 3030 
-5.2.2023, 15:44:17 - ERROR - cannot insert comment | ReferenceError: strtolower is not defined 
-5.2.2023, 15:44:17 - ERROR - Failed to add comment | ReferenceError: strtolower is not defined 
+5.2.2023, 15:44:17 - ERROR - cannot insert product | ReferenceError: strtolower is not defined 
+5.2.2023, 15:44:17 - ERROR - Failed to add product | ReferenceError: strtolower is not defined 
 5.2.2023, 15:45:26 - INFO - Server is running on port: 3030 
-5.2.2023, 15:45:41 - ERROR - cannot insert comment | ReferenceError: trim is not defined 
-5.2.2023, 15:45:41 - ERROR - Failed to add comment | ReferenceError: trim is not defined 
+5.2.2023, 15:45:41 - ERROR - cannot insert product | ReferenceError: trim is not defined 
+5.2.2023, 15:45:41 - ERROR - Failed to add product | ReferenceError: trim is not defined 
 5.2.2023, 15:46:07 - INFO - Server is running on port: 3030 
 5.2.2023, 16:02:50 - INFO - Server is running on port: 3030 
 5.2.2023, 16:03:09 - INFO - Server is running on port: 3030 

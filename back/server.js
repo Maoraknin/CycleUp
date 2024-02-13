@@ -5,8 +5,8 @@ const cookieParser = require('cookie-parser')
 const app = express()
 const http = require('http').createServer(app)
 
-// Comment
-// comment
+// Product
+// product
 
 // Express App Config
 app.use(cookieParser())
@@ -26,10 +26,10 @@ if (process.env.NODE_ENV === 'production') {
 
 
 // require all the routes
-const commentRoutes = require('./api/comment/comment.routes')
+const productRoutes = require('./api/product/product.routes')
 
 // The main route for the app
-app.use('/api/comment', commentRoutes)
+app.use('/api/product', productRoutes)
 
 app.get('/**', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'))

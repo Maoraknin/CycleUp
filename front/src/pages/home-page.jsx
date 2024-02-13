@@ -1,11 +1,11 @@
-import { CommentIndex } from "../cmps/home/comment-index";
+import { ProductIndex } from "../cmps/home/product-index";
 
 
 
 export function HomePage() {
     return (
             <section className='home main-layout'>
-                <CommentIndex />
+                <ProductIndex />
             </section>
     )
 

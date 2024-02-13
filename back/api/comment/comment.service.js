@@ -2,66 +2,66 @@ const dbService = require('../../services/db.service')
 const logger = require('../../services/logger.service')
 const ObjectId = require('mongodb').ObjectId
 
-// Comment
-// comment
+// Product
+// product
 
 async function query(filterBy={txt:''}) {
     try {
         const criteria = {
             txt: { $regex: filterBy.txt, $options: 'i' }
         }
-        const collection = await dbService.getCollection('comment')
-        var comments = await collection.find(criteria).toArray()
-        return comments
+        const collection = await dbService.getCollection('product')
+        var products = await collection.find(criteria).toArray()
+        return products
     } catch (err) {
-        logger.error('cannot find comments', err)
+        logger.error('cannot find products', err)
         throw err
     }
 }
 
-async function getById(commentId) {
+async function getById(productId) {
     try {
-        const collection = await dbService.getCollection('comment')
-        const comment = collection.findOne({ _id: ObjectId(commentId) })
-        return comment
+        const collection = await dbService.getCollection('product')
+        const product = collection.findOne({ _id: ObjectId(productId) })
+        return product
     } catch (err) {
-        logger.error(`while finding comment ${commentId}`, err)
+        logger.error(`while finding product ${productId}`, err)
         throw err
     }
 }
 
-async function remove(commentId) {
+async function remove(productId) {
     try {
-        const collection = await dbService.getCollection('comment')
-        await collection.deleteOne({ _id: ObjectId(commentId) })
-        return commentId
+        const collection = await dbService.getCollection('product')
+        await collection.deleteOne({ _id: ObjectId(productId) })
+        return productId
     } catch (err) {
-        logger.error(`cannot remove comment ${commentId}`, err)
+        logger.error(`cannot remove product ${productId}`, err)
         throw err
     }
 }
 
-async function add(comment) {
+async function add(product) {
     try {
-        const collection = await dbService.getCollection('comment')
-        await collection.insertOne(comment)
-        return comment
+        const collection = await dbService.getCollection('product')
+        await collection.insertOne(product)
+        return product
     } catch (err) {
-        logger.error('cannot insert comment', err)
+        logger.error('cannot insert product', err)
         throw err
     }
 }
 
-async function update(comment) {
+async function update(product) {
     try {
-        const commentToSave = {
-            txt: comment.txt
+        const productToSave = {
+            txt: product.txt
         }
-        const collection = await dbService.getCollection('comment')
-        await collection.updateOne({ _id: ObjectId(comment._id) }, { $set: commentToSave })
-        return comment
+        const collection = await dbService.getCollection('product')
+        await collection.updateOne({ _id: ObjectId(product._id) }, { $set: productToSave })
+        return product
     } catch (err) {
-        logger.error(`cannot update comment ${comment._id}`, err)
+        logger.error(`cannot update product ${product._id}`, err)
         throw err
     }
 }

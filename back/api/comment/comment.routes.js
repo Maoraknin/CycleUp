@@ -1,13 +1,13 @@
 const express = require('express')
-const {addComment, getComments, getCommentById, updateComment, removeComment} = require('./comment.controller')
+const {addProduct, getProducts, getProductById, updateProduct, removeProduct} = require('./product.controller')
 const router = express.Router()
 
 
-router.get('/', getComments)
-router.get('/:id', getCommentById)
-router.post('/', addComment)
-router.put('/:id', updateComment)
-router.delete('/:id', removeComment)
+router.get('/', getProducts)
+router.get('/:id', getProductById)
+router.post('/', addProduct)
+router.put('/:id', updateProduct)
+router.delete('/:id', removeProduct)
 
 module.exports = router
 
