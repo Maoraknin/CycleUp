@@ -1,0 +1,22 @@
+.app-header {
+    color: $p-clr3;
+    background-color: $p-clr1;
+    
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0;
+        
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        img{
+            margin: 0;
+            padding-right: 40px;            
+        }
+    }
+}
